@@ -6,13 +6,13 @@ import { fetchHolidays } from "../../api";
 const Timeline = () => {
   const apiKey = import.meta.env.VITE_HOLIDAY_API_KEY;
 
-  const MONTH = String(getCurrentMonth());
+  const MONTH = getCurrentMonth();
   const DAY = getCurrentDay();
   const [isCurrentDayHoliday, setIsCurrentDayHoliday] = useState(false);
 
   const { data, isLoading } = useSWR(
-    ["timeline", apiKey, COUNTRY, YEAR, MONTH],
-    ([, apiKey, country, year, month]) =>
+    [apiKey, COUNTRY, YEAR, MONTH],
+    ([apiKey, country, year, month]) =>
       fetchHolidays(apiKey, country, year, month)
   );
 
@@ -31,7 +31,7 @@ const Timeline = () => {
         return;
       }
     }
-    setIsCurrentDayHoliday(false);
+    // setIsCurrentDayHoliday(false);
   };
 
   return (

@@ -12,7 +12,7 @@ function SearchSection() {
   const countries = listCountry();
   const months = listMonth();
   const [selectedCoutryCode, setselectedCoutryCode] = React.useState("");
-  const [selectedMonth, setSelectedMonth] = React.useState("");
+  const [selectedMonth, setSelectedMonth] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(true);
   const [shouldFetch, setShouldFetch] = React.useState(false);
 
@@ -32,35 +32,10 @@ function SearchSection() {
   //   return `${year}`;
   // };
 
-  // async function fetcher(endpoint) {
-  //   try {
-  //     const response = await fetch(
-  //       `${endpoint}?key=${api_Key}&country=${selectedCoutryCode}&year=${year}&month=${selectedMonth}`
-  //     );
-
-  //     if (!response.ok) {
-  //       const errorData = await response.json();
-  //       throw new Error(errorData.message || "Failed to fetch data");
-  //     }
-
-  //     const data = await response.json();
-  //     return data;
-  //   } catch (error) {
-  //     console.error("Fetch error:", error);
-  //     throw error;
-  //   }
-  // }
-
-  // Only fetch when a country is selected
-  // const { data, isLoading, error } = useSWR(
-  //   shouldFetch ? base_Url : null,
-  //   fetcher
-  // );
   const { data, isLoading, error } = useSWR(
-    shouldFetch
-      ? ["search", apiKey, selectedCoutryCode, YEAR, selectedMonth]
-      : null,
-    ([, key, country, year, month]) => fetchHolidays(key, country, year, month)
+    shouldFetch ? [apiKey, selectedCoutryCode, YEAR, selectedMonth] : null,
+    ([apikey, country, year, month]) =>
+      fetchHolidays(apikey, country, year, month)
   );
 
   React.useEffect(() => {

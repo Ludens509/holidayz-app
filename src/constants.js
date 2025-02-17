@@ -1,5 +1,5 @@
 export const COUNTRY = "US";
-export const YEAR = 2024;
+export const YEAR = Number(2024);
 // export const getCurrentDate = () => {
 //     const today = new Date();
 //     // const year = today.getFullYear();

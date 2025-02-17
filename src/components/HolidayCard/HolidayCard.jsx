@@ -1,9 +1,21 @@
-// import useSWR from "swr";
+import useSWR from "swr";
+import { COUNTRY, YEAR, getCurrentMonth, getCurrentDay } from "../../constants";
+import { fetchHolidays } from "../../api";
 import PropTypes from "prop-types";
 import listCountry from "../../utils";
 import Loader from "../Loader";
 
-const HolidayCard = ({ data, isLoading }) => {
+const HolidayCard = () => {
+  const apiKey = import.meta.env.VITE_HOLIDAY_API_KEY;
+  const MONTH = getCurrentMonth();
+  const DAY = getCurrentDay();
+
+  const { data, isLoading } = useSWR(
+    [apiKey, COUNTRY, YEAR, MONTH, DAY],
+    ([apiKey, country, year, month, day]) =>
+      fetchHolidays(apiKey, country, year, month, day)
+  );
+
   const countries = listCountry();
   function getCountryLabel(countryCode) {
     for (let i = 0; i < countries.length; i++) {

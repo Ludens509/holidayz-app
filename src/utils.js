@@ -3,7 +3,7 @@
 //   return country ? country.name : null;
 // }
 /**
- * Returns a list of countries with their names and codes.
+ /* Returns a list of countries with their names and codes.
  */
 function listCountry() {
 
@@ -250,7 +250,7 @@ function listCountry() {
     { name: "Western Sahara", code: "EH" },
     { name: "Yemen", code: "YE" },
     { name: "Zambia", code: "ZM" },
-    { name: "Zimbabwe", code: "ZW" },
+    { name: "Zimbabwe", code: "ZW" }
   ];
   return countries;
 }

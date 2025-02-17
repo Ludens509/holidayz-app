@@ -17,7 +17,6 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
         },
-        sourcemapExcludeSources: true,
         compact: true,
         format: 'es'
       },
