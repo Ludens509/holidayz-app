@@ -19,7 +19,6 @@ function SearchSection() {
   const id = React.useId();
 
   const apiKey = import.meta.env.VITE_HOLIDAY_API_KEY;
-  // const base_Url = "https://holidayapi.com/v1/holidays";
 
   // const api_Key = import.meta.env.VITE_HOLIDAY_API_KEY;
   // const base_Url = import.meta.env.VITE_HOLIDAY_API_URL;
