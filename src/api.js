@@ -1,6 +1,6 @@
 export const fetchHolidays = async (apiKey, country, year, month, day) => {
-  // const baseUrl = "http://localhost:5000/api/holidays"; // Proxy server URL
-  const baseUrl = "https://holidayz-api-app.onrender.com/api/holidays"; // Proxy server URL on RENDER
+  const baseUrl = "http://localhost:5000/api/holidays"; // Proxy server URL
+  // const baseUrl = "https://holidayz-api-app.onrender.com/api/holidays"; // Proxy server URL on RENDER
   let url = `${baseUrl}?key=${apiKey}&country=${country}&year=${year}`;
 
   if (month) url += `&month=${month}`;
