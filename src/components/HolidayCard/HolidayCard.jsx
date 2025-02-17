@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import { COUNTRY, YEAR, getCurrentMonth, getCurrentDay } from "../../constants";
 import { fetchHolidays } from "../../api";
-import PropTypes from "prop-types";
 import listCountry from "../../utils";
 import Loader from "../Loader";
 
@@ -88,10 +87,6 @@ const HolidayCard = () => {
       </section>
     </>
   );
-};
-HolidayCard.propTypes = {
-  data: PropTypes.object,
-  isLoading: PropTypes.bool.isRequired,
 };
 
 export default HolidayCard;
