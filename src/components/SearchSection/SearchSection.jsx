@@ -20,9 +20,6 @@ function SearchSection() {
 
   const apiKey = import.meta.env.VITE_HOLIDAY_API_KEY;
 
-  // const api_Key = import.meta.env.VITE_HOLIDAY_API_KEY;
-  // const base_Url = import.meta.env.VITE_HOLIDAY_API_URL;
-
   // const getCurrentDate = () => {
   //   const today = new Date();
   //   const year = today.getFullYear();
@@ -50,8 +47,8 @@ function SearchSection() {
   }, [shouldFetch]);
 
   const handleSubmit = (event) => {
-    console.log("Selected Country code:", selectedCoutryCode);
-    console.log("Selected Month:", selectedMonth);
+    // console.log("Selected Country code:", selectedCoutryCode);
+    // console.log("Selected Month:", selectedMonth);
     // Add your submit logic here
     event.preventDefault();
     if (selectedCoutryCode && selectedMonth) {

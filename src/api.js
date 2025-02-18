@@ -18,7 +18,7 @@ export const fetchHolidays = async (apiKey, country, year, month, day) => {
 
     // Log the raw response for debugging
     const rawResponse = await response.text();
-    console.log("Raw API Response:", rawResponse);
+    // console.log("Raw API Response:", rawResponse);
 
     // Check if the response is OK (status code 200-299)
     if (!response.ok) {
@@ -27,7 +27,7 @@ export const fetchHolidays = async (apiKey, country, year, month, day) => {
 
     // Parse the response as JSON
     const data = JSON.parse(rawResponse);
-    console.log("Parsed API Data:", data);
+    // console.log("Parsed API Data:", data);
     return data;
   } catch (error) {
     console.error("Fetch error:", error);
