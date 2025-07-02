@@ -150,4 +150,4 @@ function SearchSection() {
   );
 }
 
-export default SearchSection;
+export default React.memo(SearchSection);

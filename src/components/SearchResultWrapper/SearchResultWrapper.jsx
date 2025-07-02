@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import Loader from "../Loader";
@@ -88,7 +89,7 @@ SearchResultWrapper.propTypes = {
   isLoading: PropTypes.bool.isRequired,
 };
 
-export default SearchResultWrapper;
+export default React.memo(SearchResultWrapper);
 SearchResultWrapper.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(

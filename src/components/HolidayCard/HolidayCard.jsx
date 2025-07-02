@@ -1,3 +1,4 @@
+import React from "react";
 import useSWR from "swr";
 import { COUNTRY, YEAR, getCurrentMonth, getCurrentDay } from "../../constants";
 import { fetchHolidays } from "../../api";
@@ -89,4 +90,4 @@ const HolidayCard = () => {
   );
 };
 
-export default HolidayCard;
+export default React.memo(HolidayCard);
